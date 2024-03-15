@@ -1,0 +1,6 @@
+src/savePhoto/bin
+src/savePhoto/obj
+test/savePhoto.Tests/bin
+test/savePhoto.Tests/obj
+.vscode/
+.vs/
