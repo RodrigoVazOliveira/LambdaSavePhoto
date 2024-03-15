@@ -11,8 +11,6 @@ public class Function
     public APIGatewayProxyResponse FunctionHandler(APIGatewayProxyRequest apiGatewayProxyRequest, ILambdaContext context)
     {   
         context.Logger.LogInformation("Start lambda");
-        
-
         APIGatewayProxyResponse apiGatewayProxyResponse = new APIGatewayProxyResponse();
         apiGatewayProxyResponse.StatusCode = 200;
         apiGatewayProxyResponse.Body = "{\"teste\":\"teste\"}";

@@ -14,9 +14,6 @@ public class FunctionTest
         var context = new TestLambdaContext();
         APIGatewayProxyRequest apiGatewayProxyRequest = new APIGatewayProxyRequest();
         apiGatewayProxyRequest.Body = "{xpto}";
-        
-        
-
         APIGatewayProxyResponse apiGatewayProxyResponse = function.FunctionHandler(apiGatewayProxyRequest, context);
 
         Assert.Equal(200, apiGatewayProxyResponse.StatusCode);
