@@ -1,6 +1,7 @@
 using Xunit;
 using Amazon.Lambda.Core;
 using Amazon.Lambda.TestUtilities;
+using Amazon.Lambda.APIGatewayEvents;
 
 namespace savePhoto.Tests;
 
@@ -13,8 +14,11 @@ public class FunctionTest
         // Invoke the lambda function and confirm the string was upper cased.
         var function = new Function();
         var context = new TestLambdaContext();
-        var upperCase = function.FunctionHandler("hello world", context);
+        APIGatewayProxyRequest apiGatewayProxyRequest = new APIGatewayProxyRequest();
+        apiGatewayProxyRequest.Body = "{xpto}";
+        
+        var apiGatewayProxyResponse = function.FunctionHandler(apiGatewayProxyRequest, context);
 
-        Assert.Equal("HELLO WORLD", upperCase);
+        Assert.Equal(200, apiGatewayProxyResponse.StatusCode);
     }
 }
